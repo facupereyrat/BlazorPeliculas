@@ -1,0 +1,49 @@
+﻿@if (Peliculas is null)
+{
+    <img alt="Cargando"
+         src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+}
+else if (Peliculas.Count == 0)
+{
+    <p>No hay peliculas para mostrar.</p>
+}
+else
+{
+    @foreach (var pelicula in Peliculas)
+    {
+        <div>
+            <p>
+                Titulo: @pelicula.Titulo
+
+                @if (DateTime.Today.Subtract(pelicula.FechaLanzamiento).Days <= 16)
+                {
+                    <span style="color: red">(¡NUEVO!)</span>
+                }
+            </p>
+            <p>Fecha Lanzamiento: <b>@pelicula.FechaLanzamiento.ToString("dd mmm yyyy")</b></p>
+        </div>
+    }
+}
+
+@code {
+
+    public List<Pelicula>? Peliculas { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(1);
+        Peliculas = ObtenerPeliculas();
+        //Peliculas = new List<Pelicula>();
+    }
+
+    List<Pelicula> ObtenerPeliculas()
+    {
+        return new List<Pelicula>()
+        {
+            new Pelicula{Titulo = "Wakanda Forever", FechaLanzamiento = new DateTime(2022, 11, 11)},
+            new Pelicula{Titulo = "Moana", FechaLanzamiento = new DateTime(2016, 11, 23)},
+            new Pelicula{Titulo = "Inception", FechaLanzamiento = new DateTime(2010, 7, 16)},
+        };
+    }
+
+}
