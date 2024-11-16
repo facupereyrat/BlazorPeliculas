@@ -20,7 +20,7 @@
         {
             <div>
                 <p>
-                    Titulo: <b>@pelicula.Titulo</b>
+                    Titulo: @((MarkupString)pelicula.Titulo)
 
                     @if (DateTime.Today.Subtract(pelicula.FechaLanzamiento).Days <= 16)
                     {
@@ -67,9 +67,9 @@
     {
         return new List<Pelicula>()
         {
-            new Pelicula{Titulo = "Wakanda Forever", FechaLanzamiento = new DateTime(2022, 11, 11)},
-            new Pelicula{Titulo = "Moana", FechaLanzamiento = new DateTime(2016, 11, 23)},
-            new Pelicula{Titulo = "Wakanda Forever", FechaLanzamiento = new DateTime(2010, 7, 16)},
+            new Pelicula{Titulo = "<b>Wakanda Forever</b>", FechaLanzamiento = new DateTime(2022, 11, 11)},
+            new Pelicula{Titulo = "<i>Moana</i>", FechaLanzamiento = new DateTime(2016, 11, 23)},
+            new Pelicula{Titulo = "Inception", FechaLanzamiento = new DateTime(2010, 7, 16)},
         };
     }
 
