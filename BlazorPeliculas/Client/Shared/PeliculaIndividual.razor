@@ -10,7 +10,9 @@
     <p>Fecha Lanzamiento: <b>@Pelicula.FechaLanzamiento.ToString("dd mmm yyyy")</b></p>
 </div>
 
+
 @code {
     [Parameter]
+    [EditorRequired]
     public Pelicula Pelicula { get; set; } = null!;
 }
