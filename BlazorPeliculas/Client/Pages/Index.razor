@@ -1,5 +1,7 @@
 ﻿@page "/"
 @inject ServiciosSingleton singleton
+@inject IRepositorio repositorio
+
 
 <p>Valor del singleton: @singleton.Valor</p>
 
@@ -16,18 +18,9 @@
 
     protected override void OnInitialized()
     {
-        Peliculas = ObtenerPeliculas();
+        Peliculas = repositorio.ObtenerPeliculas();
     }
 
-    List<Pelicula> ObtenerPeliculas()
-    {
-        return new List<Pelicula>()
-        {
-            new Pelicula{Titulo = "Wakanda Forever", FechaLanzamiento = new DateTime(2022, 11, 11)},
-            new Pelicula{Titulo = "Moana", FechaLanzamiento = new DateTime(2016, 11, 23)},
-            new Pelicula{Titulo = "Inception", FechaLanzamiento = new DateTime(2010, 7, 16)},
-        };
-    }
     private void AgregarPelicula()
     {
         Peliculas!.Add(new Pelicula { Titulo = "Nuevo", FechaLanzamiento = DateTime.Today });
