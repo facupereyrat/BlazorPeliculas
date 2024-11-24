@@ -2,10 +2,20 @@
 
 <div>
     <h3>Pelicula</h3>
-    <ListadoPeliculas Peliculas="ObtenerPeliculas()"/>
+    <ListadoPeliculas Peliculas="Peliculas"/>
 </div>
 
+<button @onclick="AgregarPelicula">Agregar pelicula</button>
+
 @code {
+
+    public List<Pelicula>? Peliculas{ get; set; }
+
+    protected override void OnInitialized()
+    {
+        Peliculas = ObtenerPeliculas();
+    }
+
     List<Pelicula> ObtenerPeliculas()
     {
         return new List<Pelicula>()
@@ -14,5 +24,9 @@
             new Pelicula{Titulo = "Moana", FechaLanzamiento = new DateTime(2016, 11, 23)},
             new Pelicula{Titulo = "Inception", FechaLanzamiento = new DateTime(2010, 7, 16)},
         };
+    }
+    private void AgregarPelicula()
+    {
+        Peliculas!.Add(new Pelicula { Titulo = "Nuevo", FechaLanzamiento = DateTime.Today });
     }
 }

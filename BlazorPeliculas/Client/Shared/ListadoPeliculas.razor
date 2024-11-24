@@ -26,6 +26,27 @@
     [Parameter]
     public RenderFragment NoHayRegistros { get; set; } = null!;
 
+    protected override void OnInitialized()
+    {
+        Console.WriteLine($"OnInitialized - Cantidad Peliculas {Peliculas!.Count}");
+    }
+
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine("OnParametersSet");
+    }
+
+    protected override void OnAfterRender(bool primeraRenderizacion)
+    {
+        Console.WriteLine("OnAfterRender: Primera vez:" + primeraRenderizacion);
+    }
+
+    protected override bool ShouldRender()
+    {
+        Console.WriteLine("ShouldRender");
+        return true;
+    }
+
     bool MostrarBotones = true;
 
     private void EliminarPelicula(Pelicula pelicula)
