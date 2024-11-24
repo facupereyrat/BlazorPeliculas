@@ -1,0 +1,51 @@
+﻿@typeparam Titem
+
+@if (Listado is null)
+{
+    @if (Cargando is null)
+    {
+        <img alt="Cargando"
+             src="https://th.bing.com/th/id/R.e4b6323e19e57f6761b1ce47b7d329e0?rik=ciZPruVvKeKF7Q&pid=ImgRaw&r=0" />
+    }
+    else
+    {
+        @Cargando
+    }
+    @Cargando
+}
+else if (Listado.Count == 0)
+{
+    @if (NoHayRegistros is null)
+    {
+        <p>No hay peliculas para mostrar.</p>
+    }
+    else
+    {
+        @NoHayRegistros
+    }
+    @NoHayRegistros
+    <p>No hay peliculas para mostrar.</p>
+}
+else
+{
+    @foreach(var elemento in Listado)
+    {
+        @HayRegistros(elemento)
+    }
+}
+
+@code {
+    [Parameter]
+    public RenderFragment Cargando { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment NoHayRegistros { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment<Titem> HayRegistros { get; set; } = null!;
+
+    [Parameter]
+    [EditorRequired]
+    public List<Titem> Listado { get; set; } = null!; 
+
+}

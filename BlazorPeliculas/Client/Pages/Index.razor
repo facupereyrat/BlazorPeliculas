@@ -2,37 +2,17 @@
 
 <div>
     <h3>Pelicula</h3>
-    <ListadoPeliculas Peliculas="Peliculas">
-        <Cargando>
-            <p>Cargando</p>
-        </Cargando>
-    </ListadoPeliculas>
+    <ListadoPeliculas Peliculas="ObtenerPeliculas()"/>
 </div>
 
-@* <BindAfterDemo/> *@
-
-@* <div>
-    <h2>Crear nueva pelicula</h2> 
-
-    <EjemploTextbox @attributes="EjemploTextboxParametros" />
-</div> *@
-
 @code {
-    string nombre = "Felipe";
-
-    private Dictionary<string, object> EjemploTextboxParametros = new Dictionary<string, object>()
-    { {"placeholder", "nuevo placeholder" }};
-
-    private List<Pelicula> Peliculas;
-
-    protected override void OnInitialized()
+    List<Pelicula> ObtenerPeliculas()
     {
-        Peliculas = new List<Pelicula>() {
+        return new List<Pelicula>()
+        {
             new Pelicula{Titulo = "Wakanda Forever", FechaLanzamiento = new DateTime(2022, 11, 11)},
             new Pelicula{Titulo = "Moana", FechaLanzamiento = new DateTime(2016, 11, 23)},
             new Pelicula{Titulo = "Inception", FechaLanzamiento = new DateTime(2010, 7, 16)},
         };
-
     }
-
 }
