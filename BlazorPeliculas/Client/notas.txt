@@ -1,0 +1,1 @@
+Singleton se concentra en el inicio de sesion de cada individuo
