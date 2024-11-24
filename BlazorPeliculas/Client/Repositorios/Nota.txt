@@ -1,0 +1,3 @@
+Una interface es un conjunto de asignaturas que las clases tienen que cumplir 
+Principio de inversion de dependencia: Refiere a que nuestros componentes no requiere un tipo concreto como Repositorio si no un abstracto, como IRepositorio
+Beneficios: flexibilidad para decidir la implementacion en tiempo de ejecucion 
