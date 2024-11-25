@@ -1,0 +1,2 @@
+Interfaz que se usa para interactuar con JavaScript desde C# en Blazor
+El propósito principal de IJSRuntimeExtensionMethods es proporcionar métodos adicionales que simplifican la llamada a funciones JavaScript y mejoran la experiencia de desarrollo en Blazor.

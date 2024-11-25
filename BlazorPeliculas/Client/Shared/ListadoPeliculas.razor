@@ -1,4 +1,4 @@
-﻿
+﻿@inject IJSRuntime js //Servicio por defecto para trabajar con javascript
 
     <input type="checkbox" @bind="MostrarBotones"/> 
     <span>
@@ -49,9 +49,14 @@
 
     bool MostrarBotones = true;
 
-    private void EliminarPelicula(Pelicula pelicula)
+    private async Task EliminarPelicula(Pelicula pelicula) //Await es asincrono
     {
-        Console.WriteLine("Eliminando una pelicula");
-        Peliculas!.Remove(pelicula);
+        var confirmado = await js.Confirm($"¿Desea borrar la película {pelicula.Titulo}?");
+
+        if (confirmado)
+        {
+            Console.WriteLine("Eliminando una película");
+            Peliculas!.Remove(pelicula);
+        }
     }
 }

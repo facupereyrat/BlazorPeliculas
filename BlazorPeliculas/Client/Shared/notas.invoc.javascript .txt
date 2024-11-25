@@ -1,0 +1,4 @@
+Blazor nos da la posibilidad de invocar metodos javascript mediante c# 
+La interoperabilidad de JavaScript en Blazor permite que el código C# ejecute funciones JavaScript en el navegador y también reciba datos de JavaScript, y viceversa. 
+Esto se hace utilizando la clase IJSRuntime, que es una interfaz proporcionada por Blazor para ejecutar funciones de JavaScript desde C#.
+
