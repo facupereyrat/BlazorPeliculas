@@ -1,0 +1,3 @@
+Layout es el corazon de la aplicacion, aqui aparecen los datos de todo lo visual a ver en el front.
+El app razor es la forma de ruteo del MainLayout
+
