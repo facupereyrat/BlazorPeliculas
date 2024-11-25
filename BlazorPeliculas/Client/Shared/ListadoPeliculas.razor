@@ -26,6 +26,14 @@
     [Parameter]
     public RenderFragment NoHayRegistros { get; set; } = null!;
 
+    public void LimpiarPeliculas()
+    {
+        if (Peliculas is not null)
+        {
+            Peliculas.Clear();
+        }
+    }
+
     protected override void OnInitialized()
     {
         Console.WriteLine($"OnInitialized - Cantidad Peliculas {Peliculas!.Count}");
