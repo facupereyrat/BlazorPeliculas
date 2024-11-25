@@ -1,0 +1,2 @@
+En esta seccion se colocan archivos estaticos, como css , js, html, etc
+todo archivo a su vez debe tener una referencia en index.html
