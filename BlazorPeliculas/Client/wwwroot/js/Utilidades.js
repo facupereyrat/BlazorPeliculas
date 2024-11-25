@@ -4,3 +4,7 @@
             console.log('conteo desde javascript' + resultados);
         })
 }
+
+function pruebaPuntoNetInstancia(dotnetHelper) { //referencia a un objeto c# utilizable en js
+    dotnetHelper.invokeMethodAsync("IncrementCount");
+}
