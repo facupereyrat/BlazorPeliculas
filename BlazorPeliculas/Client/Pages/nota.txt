@@ -3,3 +3,5 @@ cs=C#
 Todo componente cuando es compilado se transforma en una clase
 Con estos componentes agregados nos aseguramos del orden de lenguajes (html en un lado y c# en el otro) asegurando la parte visual y logica separadas.
 Esto no es obligatorio hacerlo pero es una buena practica en cuanto al orden refiere
+
+aislamiento de css, con el archivo de counter.razor.css nos aseguramos solo cambiar el estilo de dicha pagina
