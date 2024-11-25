@@ -1,0 +1,4 @@
+capacidad de manejar y contener código JavaScript de manera que interactúe de manera segura y eficiente con el código C# 
+sin causar conflictos o dependencias excesivas entre ambos lenguajes
+proporcionar seguridad y rendimiento.
+facilita la mantenibilidad del código al evitar que se mezcle código de JavaScript en los componentes C# o viceversa.
