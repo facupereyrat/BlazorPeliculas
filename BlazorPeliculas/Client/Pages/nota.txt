@@ -5,3 +5,9 @@ Con estos componentes agregados nos aseguramos del orden de lenguajes (html en u
 Esto no es obligatorio hacerlo pero es una buena practica en cuanto al orden refiere
 
 aislamiento de css, con el archivo de counter.razor.css nos aseguramos solo cambiar el estilo de dicha pagina
+
+
+Debugging (o depuración en español) es el proceso de identificar, analizar y corregir errores o fallos en un programa de software.
+El objetivo es asegurarse de que el código funcione correctamente y que se cumplan los requisitos esperados sin fallos.
+El debugging en el cliente (o client-side debugging) se refiere a la depuración de errores o problemas en aplicaciones web o móviles que ocurren en el lado del cliente, es decir, en el dispositivo o navegador del usuario. 
+Este proceso es clave cuando los errores no están relacionados con el servidor o la base de datos, sino con la ejecución del código que se ejecuta directamente en el dispositivo del usuario.
