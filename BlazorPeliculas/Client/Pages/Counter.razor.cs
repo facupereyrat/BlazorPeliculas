@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorPeliculas.Client.Shared.Helpers;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace BlazorPeliculas.Client.Pages
@@ -9,7 +10,9 @@ namespace BlazorPeliculas.Client.Pages
         [Inject] ServiciosSingleton singleton { get; set; } = null!;
         [Inject] ServiciosTransient transient { get; set; } = null!;
         [Inject] IJSRuntime js { get; set; } = null!;
-
+        //[CascadingParameter(Name ="Color")] protected string Color { get; set; } = null!;
+        //[CascadingParameter(Name ="Size")] protected string Size { get; set; } = null!;
+        [CascadingParameter] protected AppState appState { get; set; } = null!;
         IJSObjectReference? modulo;
 
         private int currentCount = 0;
