@@ -1,0 +1,13 @@
+Los componentes nos ayudan a separar nuestras aplicaciones en partes reutilizables.
+Los parametros nos permiten pasarle informacion a un componente.
+Los eventos nos ayudan a ejecutar funcionalidad como respuesta a una accion del usuario.
+El data Binding nos ayuda a sincronizar campos y variables.
+Los parametros del tipoo eventcallback nos permite pasar eventos como parametros a un componente. 
+RenderFragment nos permite parametrizar secciones de contenido de un componente.
+El ciclo de vida de un componente nos permite hacer acciones durante un momento clave de su vida.
+lA INYECCION DE DEPENDENCIAS NOS PERMITE SUPLIR A UNA CLASE DE DEPENDENCIAS.
+Podemos ejecutar codigo de javascript desde una aplicacion de blazor, tambien, podemos ejecutar C# desde una funcion de JavaScript.
+Podemos utilizar el atributo ref para guardar una referencia de un componente HTML o de un componente para manipularlo desde codigo C#.
+Los parametros de cascada nos permite pasar parametros a un componente desde cualquier otro componente ancestro.
+Podemos usar aislamiento de javascript: Poder cargar la aplicacion en cualquier momento y optimizarla.
+Aislamiento de css: definir reglas especificas por componente.
