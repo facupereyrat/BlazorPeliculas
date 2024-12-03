@@ -1,0 +1,2 @@
+Las reglas de ruteo nos ayudan a definir que componente va a salir en pantalla segun la url en la que se encuente el usuario
+Estas reglas se configuran utilizando la directiva @page

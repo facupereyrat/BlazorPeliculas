@@ -1,12 +1,12 @@
 ﻿<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData"> @* Found es encontrado *@
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" /> @* Route view seria pista de las rutas *@
-        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" /> @* Hacer foco en un elemento determinado *@
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
+        <PageTitle>Not encontrado</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+            <CostomNotFound/>
         </LayoutView>
     </NotFound>
 </Router>
