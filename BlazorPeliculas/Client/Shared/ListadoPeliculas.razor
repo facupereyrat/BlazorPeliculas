@@ -1,61 +1,19 @@
-﻿@inject IJSRuntime js //Servicio por defecto para trabajar con javascript
+﻿@inject IJSRuntime js 
 
-    <input type="checkbox" @bind="MostrarBotones"/> 
-    <span>
-        Mostrar botones
-    </span>
-    
+<div style="display: flex; flex-wrap:wrap; align-items: center;">
     <ListadoGenerico Listado="Peliculas">
         <HayRegistros Context="pelicula">
-            <PeliculaIndividual Pelicula="pelicula" 
-            EliminarPelicula="EliminarPelicula"
-            MostrarBotones="MostrarBotones" />
+            <PeliculaIndividual Pelicula="pelicula"
+                                EliminarPelicula="EliminarPelicula" />
         </HayRegistros>
     </ListadoGenerico>
+</div>
     
-
 
 @code {
     [Parameter]
     [EditorRequired]
     public List<Pelicula>? Peliculas { get; set; }
-
-    [Parameter]
-    public RenderFragment Cargando { get; set; } = null!;
-
-    [Parameter]
-    public RenderFragment NoHayRegistros { get; set; } = null!;
-
-    public void LimpiarPeliculas()
-    {
-        if (Peliculas is not null)
-        {
-            Peliculas.Clear();
-        }
-    }
-
-    protected override void OnInitialized()
-    {
-        Console.WriteLine($"OnInitialized - Cantidad Peliculas {Peliculas!.Count}");
-    }
-
-    protected override void OnParametersSet()
-    {
-        Console.WriteLine("OnParametersSet");
-    }
-
-    protected override void OnAfterRender(bool primeraRenderizacion)
-    {
-        Console.WriteLine("OnAfterRender: Primera vez:" + primeraRenderizacion);
-    }
-
-    protected override bool ShouldRender()
-    {
-        Console.WriteLine("ShouldRender");
-        return true;
-    }
-
-    bool MostrarBotones = true;
 
     private async Task EliminarPelicula(Pelicula pelicula) //Await es asincrono
     {
