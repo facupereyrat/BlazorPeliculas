@@ -9,8 +9,6 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-builder.Services.AddSingleton<ServiciosSingleton>();
-builder.Services.AddTransient<ServiciosTransient>();
 builder.Services.AddSingleton<IRepositorio, Repositorio>();
 
 await builder.Build().RunAsync();
