@@ -1,4 +1,11 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Services;
+@using System.Reflection;
+@inject LazyAssemblyLoader lazyLoader
+
+<Router AppAssembly="@typeof(App).Assembly"
+onNavigateAsync="OnNavigateAsync"
+AdditionalAssemblies="assemblies">
+
     <Found Context="routeData"> @* Found es encontrado *@
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" /> @* Route view seria pista de las rutas *@
         <FocusOnNavigate RouteData="@routeData" Selector="h1" /> @* Hacer foco en un elemento determinado *@
@@ -10,3 +17,15 @@
         </LayoutView>
     </NotFound>
 </Router>
+
+@code {
+    private List<Assembly> assemblies = new List<Assembly>();
+    private async Task OnNavigateAsync(NavigationContext args)
+    {
+        if (args.Path.EndsWith("counter"))
+        {
+            var assembliesCargados = await lazyLoader.LoadAssembliesAsync(new List<string> { "MathNet.Numerics.dll" });
+            assemblies.AddRange(assembliesCargados);
+        }
+    }
+}
