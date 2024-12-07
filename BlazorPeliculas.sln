@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{15A2BE2F-6A0A-47FE-94B3-527769FE2514}"
 	ProjectSection(SolutionItems) = preProject
 		Modulo 4.txt = Modulo 4.txt
+		notas ruteo.txt = notas ruteo.txt
 	EndProjectSection
 EndProject
 Global

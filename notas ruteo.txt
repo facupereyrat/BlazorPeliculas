@@ -1,0 +1,6 @@
+Con la directiva page podemos configurar nuestros componentes como ruteables
+En el archivo App.Razor colocamos la ocnfiguracion del router de blazor
+Con navigationmanager podemos redireccionar a los usuarios de nuestra aplicacion a distintos lugares
+Los parametros de ruta nos sirven para leer desde un componente los valores definidos en la url
+El navlink es un componente util para definir links de menu
+Lazy loading retrasa la dlls especifica (asi nuestra app anda mas rapido)
