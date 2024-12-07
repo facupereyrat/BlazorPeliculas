@@ -1,7 +1,24 @@
-﻿@page "/generos/Crear"
+﻿@page "/generos/crear"
 
-<h3>CrearGenero</h3>
+<h3>Crear Genero</h3>
+
+<EditForm Model="Genero" OnSubmit="Crear">
+    <div class="mb-3">
+        <label>Nombre:</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@Genero.Nombre" />
+        </div>
+    </div>
+
+    <button class="btn btn-success" type="submit">Guardar Cambios</button>
+</EditForm>
 
 @code {
+    private Genero Genero = new Genero();
 
+    private void Crear()
+    {
+        Console.WriteLine("Ejecutando metodo Crear");
+        Console.WriteLine($"Nombre del género: {Genero.Nombre}");
+    }
 }
